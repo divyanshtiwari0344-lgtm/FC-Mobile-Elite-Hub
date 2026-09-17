@@ -1,119 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FC MOBILE ELITE HUB</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FC MOBILE ELITE HUB — tools, games, challenges, tournaments and community features for FC Mobile players.">
+<meta name="theme-color" content="#0a0a0a">
+<title>FC MOBILE ELITE HUB</title>
+<style>
+:root{--bg:#070707;--panel:#111;--panel2:#171717;--border:#2b2b2b;--gold:#d4af37;--gold2:#f5d76e;--text:#fff;--muted:#a8a8a8;--danger:#ef4444;--success:#22c55e;--shadow:0 15px 50px rgba(0,0,0,.35)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at top,#18130a 0,#070707 35%);color:var(--text);line-height:1.55}a{color:inherit}.container{width:min(1180px,92%);margin:auto}.navbar{position:sticky;top:0;z-index:1000;background:rgba(7,7,7,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;letter-spacing:.7px}.brand span{color:var(--gold)}.nav-links{display:flex;gap:8px;flex-wrap:wrap}.nav-links a{padding:9px 12px;border-radius:9px;text-decoration:none;color:#ddd;font-weight:700;font-size:14px}.nav-links a:hover{background:#1a1a1a;color:var(--gold2)}.menu-btn{display:none;background:none;border:1px solid var(--border);color:#fff;border-radius:8px;padding:8px 10px}
+.hero{padding:90px 0 70px;text-align:center}.eyebrow{color:var(--gold);letter-spacing:4px;font-size:13px;font-weight:900}.hero h1{font-size:clamp(42px,7vw,78px);line-height:1;margin:18px 0}.hero p{max-width:760px;margin:0 auto 28px;color:var(--muted);font-size:18px}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid var(--border);border-radius:10px;text-decoration:none;background:#141414;color:#fff;font-weight:800;cursor:pointer}.btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;border-color:var(--gold)}.btn.ghost:hover,.btn:hover{transform:translateY(-1px);border-color:#555}.btn.danger{background:#2a1010;border-color:#662323}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:35px}.stat{background:rgba(17,17,17,.86);border:1px solid var(--border);padding:20px;border-radius:14px}.stat strong{display:block;font-size:26px;color:var(--gold2)}.section{padding:72px 0;border-top:1px solid rgba(255,255,255,.03)}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font-size:34px;margin:0 0 8px}.section-head p{color:var(--muted);margin:0}.grid{display:grid;gap:16px}.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}.card{background:linear-gradient(180deg,#141414,#0f0f0f);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}.card h3{margin:0 0 8px}.card p{color:var(--muted);margin:0 0 14px}.tool-icon{font-size:34px;margin-bottom:8px}.tag{display:inline-block;padding:4px 8px;border:1px solid #3a3a3a;border-radius:999px;font-size:12px;color:#ccc}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:13px;color:#cfcfcf;font-weight:700}.input,.select,.textarea{width:100%;padding:11px 12px;border-radius:10px;border:1px solid #343434;background:#0d0d0d;color:#fff;outline:none}.input:focus,.select:focus,.textarea:focus{border-color:var(--gold)}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.muted{color:var(--muted)}.notice{padding:12px 14px;border-left:3px solid var(--gold);background:#141109;color:#ddd;border-radius:8px}.hidden{display:none!important}.small{font-size:13px}
+/* player card */
+.pc-wrap{display:grid;grid-template-columns:330px 1fr;gap:24px;align-items:start}.player-card{width:300px;min-height:420px;margin:auto;position:relative;overflow:hidden;border-radius:26px;padding:22px;border:2px solid var(--gold);background:radial-gradient(circle at 50% 15%,#5f4b16 0,#2a210d 25%,#13110b 58%,#090909 100%);box-shadow:0 20px 70px rgba(212,175,55,.13)}.player-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.14),transparent 40%,rgba(212,175,55,.05));pointer-events:none}.pc-top{display:flex;gap:14px;position:relative;z-index:1}.pc-ovr{font-size:54px;font-weight:900;line-height:.9}.pc-pos{font-weight:900;color:#ddd;margin-top:6px}.pc-photo{height:210px;margin:22px 0 4px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}.pc-photo img{max-height:210px;max-width:88%;object-fit:contain;filter:drop-shadow(0 14px 15px rgba(0,0,0,.55))}.pc-photo .placeholder{font-size:72px;opacity:.55}.pc-name{text-align:center;font-size:25px;font-weight:900;position:relative;z-index:1}.pc-meta{text-align:center;color:#c9c9c9;font-size:12px;position:relative;z-index:1}.pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:16px;position:relative;z-index:1}.pc-stat{border:1px solid rgba(255,255,255,.08);padding:7px;border-radius:8px;text-align:center;background:rgba(0,0,0,.23)}.pc-stat strong{display:block;color:var(--gold2)}
+/* squad */
+.formation{position:relative;min-height:550px;border-radius:20px;overflow:hidden;background:radial-gradient(circle at center,#14451d,#0c2a13 50%,#071009);border:1px solid #235629}.pitch-lines{position:absolute;inset:0;background:linear-gradient(transparent 49.5%,rgba(255,255,255,.28) 50%,transparent 50.5%),linear-gradient(90deg,transparent 49.7%,rgba(255,255,255,.22) 50%,transparent 50.3%);opacity:.8}.center-circle{position:absolute;left:50%;top:50%;width:110px;height:110px;transform:translate(-50%,-50%);border:2px solid rgba(255,255,255,.3);border-radius:50%}.player-slot{position:absolute;transform:translate(-50%,-50%);width:92px;text-align:center}.slot-dot{width:52px;height:52px;margin:auto;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#262626,#101010);border:2px solid var(--gold);font-weight:900;box-shadow:0 7px 20px rgba(0,0,0,.4)}.slot-label{font-size:12px;font-weight:900;margin-top:5px}.slot-ovr{font-size:11px;color:var(--gold2)}.slot-input{width:100%;margin-top:4px;background:rgba(0,0,0,.55);border:1px solid #3b3b3b;color:#fff;border-radius:6px;padding:4px;font-size:11px}
+/* tables / lists */
+.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:620px}.table th,.table td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left}.table th{color:var(--gold2);font-size:13px}.table tbody tr:hover{background:#151515}.rank{color:var(--gold);font-weight:900}.list{display:grid;gap:10px}.list-row{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:12px;border:1px solid var(--border);border-radius:10px;background:#111}.badge{padding:6px 9px;border-radius:8px;background:#1c1608;border:1px solid #5e4b15;color:var(--gold2);font-size:12px;font-weight:800}.toast{position:fixed;right:20px;bottom:20px;z-index:5000;background:#111;border:1px solid #444;padding:12px 14px;border-radius:10px;box-shadow:var(--shadow);display:none}.toast.show{display:block}.footer{padding:40px 0;border-top:1px solid var(--border);margin-top:30px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}.footer a{color:#ccc;text-decoration:none}.footer a:hover{color:var(--gold2)}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:18px;z-index:3000}.modal.open{display:flex}.modal-card{width:min(680px,100%);max-height:88vh;overflow:auto;background:#111;border:1px solid var(--border);border-radius:16px;padding:20px}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.icon-btn{border:1px solid var(--border);background:#151515;color:#fff;border-radius:8px;padding:8px 10px;cursor:pointer}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}.pc-wrap{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.nav-links{display:none}.menu-btn{display:block}.nav-links.open{display:flex;position:absolute;left:4%;right:4%;top:64px;background:#0e0e0e;border:1px solid var(--border);padding:10px;border-radius:12px}.nav-links.open a{width:100%}}
+@media (max-width:620px){.grid-2,.grid-3,.grid-4,.form-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero{padding-top:70px}.hero h1{font-size:42px}.player-card{width:270px}}
+</style>
 </head>
-
 <body>
+<header class="navbar"><div class="container nav-inner"><a class="brand" href="#home" style="text-decoration:none">⚽ FC MOBILE <span>ELITE</span></a><button id="menuBtn" class="menu-btn">☰</button><nav id="navLinks" class="nav-links"><a href="#home">Home</a><a href="#tools">Tools</a><a href="#games">Games</a><a href="#challenges">Challenges</a><a href="#tournaments">Tournaments</a><a href="#community">Community</a><a href="#admin">Admin</a></nav></div></header>
 
-    <header class="navbar">
-        <div class="logo">⚽ FC MOBILE ELITE</div>
+<main id="home">
+<section class="hero"><div class="container"><div class="eyebrow">WELCOME TO THE COMMUNITY HUB</div><h1>FC MOBILE ELITE HUB</h1><p>Tools, games, challenges, tournaments, leaderboards and community features — all in one place for FC Mobile players.</p><div class="hero-actions"><a class="btn primary" href="#tools">🚀 Explore Hub</a><a class="btn" href="https://discord.gg/8d8WJWdzrR" target="_blank" rel="noopener">💬 Join Discord</a><a class="btn" href="https://www.youtube.com/@FCMobileElite-78" target="_blank" rel="noopener">▶ YouTube</a><a class="btn" href="https://www.instagram.com/fcm.elite_ea?stkn=MWwzOWxrdnVoMnVIYw==" target="_blank" rel="noopener">📸 Instagram</a></div><div class="stats"><div class="stat"><strong id="statUsers">0</strong><span class="muted">Community Profiles</span></div><div class="stat"><strong id="statPoints">0</strong><span class="muted">FCME Points</span></div><div class="stat"><strong id="statEvents">0</strong><span class="muted">Events</span></div><div class="stat"><strong id="statAchievements">0</strong><span class="muted">Achievements</span></div></div></div></section>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#tools">Tools</a>
-            <a href="#games">Games</a>
-            <a href="#tournaments">Tournaments</a>
-        </nav>
-    </header>
+<section id="tools" class="section"><div class="container"><div class="section-head"><h2>🔥 TOOLS</h2><p>Build, rate, search and create.</p></div><div class="grid grid-4">
+<div class="card"><div class="tool-icon">🃏</div><h3>Player Card Generator</h3><p>Create a custom player card with photo, OVR and stats.</p><button class="btn primary" data-scroll="#player-card">Open Tool</button></div>
+<div class="card"><div class="tool-icon">🧩</div><h3>Squad Builder</h3><p>Choose a formation, fill your XI and calculate squad OVR.</p><button class="btn primary" data-scroll="#squad-builder">Open Tool</button></div>
+<div class="card"><div class="tool-icon">⭐</div><h3>Squad Rating</h3><p>Rate attack, midfield, defense and goalkeeper areas.</p><button class="btn primary" data-scroll="#squad-rating">Open Tool</button></div>
+<div class="card"><div class="tool-icon">🔍</div><h3>Player Search</h3><p>Search the built-in sample player database by OVR and position.</p><button class="btn primary" data-scroll="#player-search">Open Tool</button></div>
+</div></div></section>
 
-    <main>
+<section id="player-card" class="section"><div class="container"><div class="section-head"><h2>🃏 PLAYER CARD GENERATOR</h2><p>Generate a shareable FC Mobile-style card in your browser.</p></div><div class="pc-wrap"><div class="card"><div class="form-grid">
+<div class="field"><label>Player Name</label><input id="pcName" class="input" value="Your Player" maxlength="28"></div>
+<div class="field"><label>OVR</label><input id="pcOvr" class="input" type="number" min="1" max="200" value="125"></div>
+<div class="field"><label>Position</label><select id="pcPos" class="select"><option>ST</option><option>LW</option><option>RW</option><option>CAM</option><option>CM</option><option>CDM</option><option>LM</option><option>RM</option><option>LB</option><option>CB</option><option>RB</option><option>GK</option></select></div>
+<div class="field"><label>Club</label><input id="pcClub" class="input" value="FC MOBILE ELITE" maxlength="24"></div>
+<div class="field"><label>Nation</label><input id="pcNation" class="input" value="IND" maxlength="8"></div>
+<div class="field"><label>League</label><input id="pcLeague" class="input" value="Community League" maxlength="24"></div>
+<div class="field"><label>Player Photo</label><input id="pcPhoto" class="input" type="file" accept="image/*"></div>
+<div class="field"><label>Card Style</label><select id="pcStyle" class="select"><option value="elite">Elite Gold</option><option value="dark">Dark Gold</option><option value="light">Light Gold</option></select></div>
+</div><div class="form-grid" style="margin-top:12px">
+<div class="field"><label>PAC</label><input id="pcPac" class="input stat-input" type="number" min="1" max="199" value="125"></div><div class="field"><label>SHO</label><input id="pcSho" class="input stat-input" type="number" min="1" max="199" value="125"></div><div class="field"><label>PAS</label><input id="pcPas" class="input stat-input" type="number" min="1" max="199" value="125"></div><div class="field"><label>DRI</label><input id="pcDri" class="input stat-input" type="number" min="1" max="199" value="125"></div><div class="field"><label>DEF</label><input id="pcDef" class="input stat-input" type="number" min="1" max="199" value="125"></div><div class="field"><label>PHY</label><input id="pcPhy" class="input stat-input" type="number" min="1" max="199" value="125"></div>
+</div><div class="form-actions"><button class="btn primary" id="pcGenerate">✨ Update Card</button><button class="btn" id="pcDownload">⬇ Download Card</button></div><div class="notice small" style="margin-top:14px">The photo and card are generated in your browser. Nothing is uploaded by this page.</div></div>
+<div><div id="playerCardPreview" class="player-card"><div class="pc-top"><div><div class="pc-ovr" id="pvOvr">125</div><div class="pc-pos" id="pvPos">ST</div></div></div><div class="pc-photo" id="pvPhoto"><div class="placeholder">⚽</div></div><div class="pc-name" id="pvName">Your Player</div><div class="pc-meta" id="pvMeta">FC MOBILE ELITE • IND • Community League</div><div class="pc-stats"><div class="pc-stat"><strong id="pvPac">125</strong>PAC</div><div class="pc-stat"><strong id="pvSho">125</strong>SHO</div><div class="pc-stat"><strong id="pvPas">125</strong>PAS</div><div class="pc-stat"><strong id="pvDri">125</strong>DRI</div><div class="pc-stat"><strong id="pvDef">125</strong>DEF</div><div class="pc-stat"><strong id="pvPhy">125</strong>PHY</div></div></div></div></div></div></section>
 
-        <section id="home" class="hero">
-            <p class="small-title">WELCOME TO</p>
+<section id="squad-builder" class="section"><div class="container"><div class="section-head"><h2>🧩 SQUAD BUILDER</h2><p>Build a lineup and calculate your squad OVR.</p></div><div class="grid grid-2"><div class="formation"><div class="pitch-lines"></div><div class="center-circle"></div><div id="pitchSlots"></div></div><div class="card"><div class="form-grid"><div class="field"><label>Formation</label><select id="formation" class="select"><option value="4-3-3">4-3-3</option><option value="4-2-3-1">4-2-3-1</option><option value="4-1-2-1-2">4-1-2-1-2 Narrow</option><option value="4-4-2">4-4-2</option><option value="3-4-3">3-4-3</option></select></div><div class="field"><label>Squad Name</label><input id="squadName" class="input" value="My Elite Squad"></div></div><div id="squadOvrBox" class="notice" style="margin-top:14px">Squad OVR: <strong id="squadOvr">0</strong></div><div class="form-actions"><button class="btn primary" id="saveSquad">💾 Save Squad</button><button class="btn" id="loadSquad">📂 Load Squad</button><button class="btn" id="clearSquad">🗑 Clear</button></div><p class="small muted" style="margin-top:14px">Enter each player's OVR in the pitch slots. The tool stores your saved squad in this browser.</p></div></div></div></section>
 
-            <h1>FC MOBILE ELITE HUB</h1>
+<section id="squad-rating" class="section"><div class="container"><div class="section-head"><h2>⭐ SQUAD RATING</h2><p>Get a quick breakdown of your squad.</p></div><div class="card"><div class="form-grid"><div class="field"><label>Attack</label><input id="rateAtk" class="input rating-input" type="number" min="1" max="100" value="80"></div><div class="field"><label>Midfield</label><input id="rateMid" class="input rating-input" type="number" min="1" max="100" value="80"></div><div class="field"><label>Defense</label><input id="rateDef" class="input rating-input" type="number" min="1" max="100" value="80"></div><div class="field"><label>GK</label><input id="rateGk" class="input rating-input" type="number" min="1" max="100" value="80"></div></div><div class="form-actions"><button class="btn primary" id="calculateRating">⭐ Calculate Rating</button></div><div id="ratingResult" style="margin-top:18px"></div></div></div></section>
 
-            <p class="hero-text">
-                Your ultimate hub for FC Mobile tools, games, challenges and tournaments.
-            </p>
+<section id="player-search" class="section"><div class="container"><div class="section-head"><h2>🔍 PLAYER SEARCH</h2><p>Search the sample database and filter by position.</p></div><div class="card"><div class="form-grid"><div class="field"><label>Search</label><input id="searchInput" class="input" placeholder="e.g. Messi"></div><div class="field"><label>Position</label><select id="searchPos" class="select"><option value="">All</option><option>ST</option><option>LW</option><option>RW</option><option>CAM</option><option>CM</option><option>CDM</option><option>CB</option><option>LB</option><option>RB</option><option>GK</option></select></div></div><div id="playerResults" class="grid grid-3" style="margin-top:18px"></div></div></div></section>
 
-            <a href="#tools" class="main-button">EXPLORE HUB</a>
-        </section>
+<section id="games" class="section"><div class="container"><div class="section-head"><h2>🧠 GAMES</h2><p>Test your FC Mobile knowledge.</p></div><div class="grid grid-2"><div class="card"><h3>Guess the Player</h3><p id="guessClues">Loading clues…</p><div class="field"><label>Your Guess</label><input id="guessInput" class="input" placeholder="Enter player name"></div><div class="form-actions"><button class="btn primary" id="guessSubmit">🎯 Submit Guess</button><button class="btn" id="guessNew">🔄 New Player</button></div><p class="small muted" id="guessStatus" style="margin-top:10px"></p><div class="notice" style="margin-top:16px">Score: <strong id="guessScore">0</strong> • Streak: <strong id="guessStreak">0</strong></div></div><div class="card"><h3>🏆 Game Rules</h3><p>Every correct guess gives points. A streak adds a small bonus.</p><div class="list"><div class="list-row"><span>Correct guess</span><span class="badge">+100</span></div><div class="list-row"><span>Streak bonus</span><span class="badge">+25</span></div><div class="list-row"><span>Skip</span><span class="badge">New round</span></div></div></div></div></div></section>
 
-        <section id="tools" class="section">
-            <h2>🔥 TOOLS</h2>
+<section id="challenges" class="section"><div class="container"><div class="section-head"><h2>🔥 DAILY & WEEKLY CHALLENGES</h2><p>Build community activity around recurring FC Mobile tasks.</p></div><div class="grid grid-3"><div class="card"><span class="tag">DAILY</span><h3 style="margin-top:10px">Daily Challenge</h3><p id="dailyChallengeText">Score a long-range goal and submit proof in Discord.</p><button class="btn primary" id="dailyComplete">✅ Mark Completed</button></div><div class="card"><span class="tag">WEEKLY</span><h3 style="margin-top:10px">Goal of the Week</h3><p>Submit your best goal clip for the weekly community activity.</p><button class="btn" id="goalSubmit">📩 Add Submission</button></div><div class="card"><span class="tag">MONTHLY</span><h3 style="margin-top:10px">Monthly Champion</h3><p>Earn points through challenges and community events.</p><button class="btn" data-scroll="#leaderboard">🏅 View Leaderboard</button></div></div></div></section>
 
-            <div class="card-grid">
+<section id="tournaments" class="section"><div class="container"><div class="section-head"><h2>🏆 TOURNAMENT HUB</h2><p>Public-facing tournament information and community events.</p></div><div class="grid grid-3" id="tournamentCards"></div><div class="card" style="margin-top:16px"><h3>Sample Standings</h3><div class="table-wrap"><table class="table"><thead><tr><th>Rank</th><th>Player</th><th>Pts</th><th>GD</th><th>GF</th></tr></thead><tbody id="standingsBody"></tbody></table></div></div><div class="card" style="margin-top:16px"><h3>Knockout Bracket</h3><div class="grid grid-2" id="bracket"></div></div></div></section>
 
-                <div class="feature-card">
-                    <div class="icon">🃏</div>
-                    <h3>Player Card Generator</h3>
-                    <p>Create your own custom FC Mobile player cards.</p>
-                </div>
+<section id="community" class="section"><div class="container"><div class="section-head"><h2>👥 COMMUNITY</h2><p>Profiles, FCME points, achievements and the Hall of Fame.</p></div><div class="grid grid-3"><div class="card"><h3>Profile</h3><div class="form-grid"><div class="field"><label>Username</label><input id="profileName" class="input" placeholder="Your username"></div><div class="field"><label>FC UID</label><input id="profileUid" class="input" placeholder="Your FC UID"></div><div class="field"><label>Favorite Formation</label><input id="profileFormation" class="input" value="4-1-2-1-2"></div><div class="field"><label>Favorite Club</label><input id="profileClub" class="input" placeholder="Club"></div></div><div class="form-actions"><button class="btn primary" id="saveProfile">💾 Save Profile</button></div><div id="profileView" class="notice" style="margin-top:14px">No profile saved yet.</div></div>
+<div class="card" id="leaderboard"><h3>FCME Leaderboard</h3><div id="leaderboardList" class="list"></div></div><div class="card"><h3>🏆 Hall of Fame</h3><div id="hallList" class="list"></div></div></div></div></section>
 
-                <div class="feature-card">
-                    <div class="icon">🧩</div>
-                    <h3>Squad Builder</h3>
-                    <p>Build and organize your dream FC Mobile squad.</p>
-                </div>
+<section id="content" class="section"><div class="container"><div class="section-head"><h2>📰 CONTENT ZONE</h2><p>Guides, tips, creator content and update space.</p></div><div class="grid grid-3"><div class="card"><h3>Guide</h3><p>Build a balanced squad around your preferred formation and play style.</p></div><div class="card"><h3>Tips & Tricks</h3><p>Use your strongest players in positions that match their attributes and role.</p></div><div class="card"><h3>Creator Zone</h3><p>Connect with FC MOBILE ELITE on YouTube and Instagram.</p><div class="form-actions"><a class="btn" href="https://www.youtube.com/@FCMobileElite-78" target="_blank" rel="noopener">▶ YouTube</a><a class="btn" href="https://www.instagram.com/fcm.elite_ea?stkn=MWwzOWxrdnVoMnVIYw==" target="_blank" rel="noopener">📸 Instagram</a></div></div></div></div></section>
 
-                <div class="feature-card">
-                    <div class="icon">⭐</div>
-                    <h3>Squad Rating</h3>
-                    <p>Rate your squad and see how strong it is.</p>
-                </div>
+<section id="admin" class="section"><div class="container"><div class="section-head"><h2>⚙️ ADMIN PANEL</h2><p>Browser-local prototype controls for FC MOBILE ELITE.</p></div><div class="card"><div id="adminLogin"><div class="field" style="max-width:400px"><label>Admin PIN</label><input id="adminPin" class="input" type="password" placeholder="Enter admin PIN"></div><div class="form-actions"><button class="btn primary" id="adminLoginBtn">🔐 Enter Admin Mode</button></div><p class="small muted" style="margin-top:10px">Prototype PIN: FME2026</p></div><div id="adminPanel" class="hidden"><div class="notice">Admin mode is active. Changes are stored in this browser until we connect a real backend.</div><div class="grid grid-3" style="margin-top:16px"><div class="card"><h3>Give FCME Points</h3><div class="field"><label>Username</label><input id="adminUser" class="input"></div><div class="field" style="margin-top:8px"><label>Points</label><input id="adminPoints" class="input" type="number" value="50"></div><button class="btn primary" id="adminAddPoints" style="margin-top:12px">➕ Add Points</button></div><div class="card"><h3>Create Event</h3><div class="field"><label>Event Name</label><input id="adminEventName" class="input"></div><div class="field" style="margin-top:8px"><label>Prize / Reward</label><input id="adminEventPrize" class="input" value="Community Reward"></div><button class="btn primary" id="adminCreateEvent" style="margin-top:12px">🏆 Create Event</button></div><div class="card"><h3>Announcement</h3><div class="field"><label>Message</label><textarea id="adminAnnouncement" class="textarea" rows="4"></textarea></div><button class="btn primary" id="adminPublish" style="margin-top:12px">📢 Publish</button></div></div><div class="form-actions" style="margin-top:16px"><button class="btn" id="exportData">💾 Export Data</button><label class="btn" style="cursor:pointer">📥 Import Data<input id="importData" type="file" accept="application/json" hidden></label><button class="btn danger" id="resetData">🗑 Reset Local Data</button><button class="btn" id="adminLogout">Log out</button></div><div id="adminLogs" class="list" style="margin-top:16px"></div></div></div></div></section>
 
-            </div>
-        </section>
-        <section id="player-card" class="section">
-    <h2>🃏 PLAYER CARD GENERATOR</h2>
+</main>
 
-    <div class="generator-box">
-        <input type="text" id="playerName" placeholder="Player Name">
+<footer class="footer"><div class="container footer-grid"><div><h3>⚽ FC MOBILE ELITE HUB</h3><p class="muted">Community tools, games, challenges and tournaments.</p></div><div><h4>Community</h4><div class="list"><a href="https://discord.gg/8d8WJWdzrR" target="_blank" rel="noopener">Discord</a><a href="https://www.youtube.com/@FCMobileElite-78" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/fcm.elite_ea?stkn=MWwzOWxrdnVoMnVIYw==" target="_blank" rel="noopener">Instagram</a></div></div><div><h4>Sections</h4><div class="list"><a href="#player-card">Player Cards</a><a href="#squad-builder">Squad Builder</a><a href="#games">Games</a><a href="#tournaments">Tournaments</a></div></div></div><div class="container small muted" style="margin-top:22px">© 2026 FC MOBILE ELITE HUB • Built for the FC Mobile community.</div></footer>
+<div id="toast" class="toast"></div>
 
-        <input type="number" id="playerOVR" placeholder="OVR" min="1" max="200">
-
-        <input type="text" id="playerPosition" placeholder="Position">
-
-        <button class="main-button" onclick="generateCard()">
-            CREATE CARD
-        </button>
-    </div>
-
-    <div id="playerCardResult"></div>
-</section>
-
-        <section id="games" class="section">
-            <h2>🎮 GAMES & CHALLENGES</h2>
-
-            <div class="card-grid">
-
-                <div class="feature-card">
-                    <div class="icon">🧠</div>
-                    <h3>Guess the Player</h3>
-                    <p>Test your FC Mobile knowledge and guess the player.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="icon">🔥</div>
-                    <h3>Daily Challenges</h3>
-                    <p>Take on new FC Mobile challenges every day.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="tournaments" class="section">
-            <h2>🏆 TOURNAMENT HUB</h2>
-
-            <div class="tournament-box">
-                <h3>FC MOBILE ELITE</h3>
-                <p>Follow upcoming tournaments, seasons and community events.</p>
-
-                <a href="#home" class="main-button">COMING SOON</a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 FC MOBILE ELITE HUB</p>
-    </footer>
-    <script src="script.js"></script>
-
+<script>
+(function(){
+'use strict';
+const CONFIG={DISCORD:'https://discord.gg/8d8WJWdzrR',YOUTUBE:'https://www.youtube.com/@FCMobileElite-78',INSTAGRAM:'https://www.instagram.com/fcm.elite_ea?stkn=MWwzOWxrdnVoMnVIYw==',ADMIN_PIN:'FME2026'};
+const $=(s)=>document.querySelector(s); const $$=(s)=>Array.from(document.querySelectorAll(s));
+const showToast=(msg)=>{const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(showToast.t);showToast.t=setTimeout(()=>t.classList.remove('show'),2300)};
+const read=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}; const write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+let players=[
+{name:'Lionel Messi',ovr:129,pos:'RW',club:'Barcelona',nation:'ARG',pace:92},
+{name:'Kylian Mbappe',ovr:130,pos:'ST',club:'Real Madrid',nation:'FRA',pace:99},
+{name:'Cristiano Ronaldo',ovr:128,pos:'ST',club:'Al Nassr',nation:'POR',pace:90},
+{name:'Vinicius Jr',ovr:127,pos:'LW',club:'Real Madrid',nation:'BRA',pace:98},
+{name:'Jude Bellingham',ovr:128,pos:'CAM',club:'Real Madrid',nation:'ENG',pace:87},
+{name:'Rodri',ovr:127,pos:'CDM',club:'Manchester City',nation:'ESP',pace:78},
+{name:'Virgil van Dijk',ovr:126,pos:'CB',club:'Liverpool',nation:'NED',pace:79},
+{name:'Achraf Hakimi',ovr:125,pos:'RB',club:'PSG',nation:'MAR',pace:95},
+{name:'Thibaut Courtois',ovr:127,pos:'GK',club:'Real Madrid',nation:'BEL',pace:75}
+];
+let app=read('fme_hub',{profiles:[],events:[{name:'FC MOBILE ELITE Season 3',prize:'₹320 Prize Pool',status:'Registration Open'},{name:'Sunday Tournament',prize:'Weekly Community Event',status:'Upcoming'},{name:'Goal of the Week',prize:'Community Achievement',status:'Active'}],points:{Divyansh:320,KohliGamer:210,'SK Ali':175,Krishna:150},announcements:[],hall:[{name:'SK Ali',title:'Season Winner'},{name:'Kohli Gamer',title:'Goal of the Week'},{name:'Krishna',title:'Weekly MVP'}]});
+function sync(){write('fme_hub',app);renderStats();renderLeaderboard();renderHall();renderEvents();renderAdminLogs()}
+function renderStats(){const users=Object.keys(app.points).length;const total=Object.values(app.points).reduce((a,b)=>a+b,0);$('#statUsers').textContent=users;$('#statPoints').textContent=total;$('#statEvents').textContent=app.events.length;$('#statAchievements').textContent=app.hall.length}
+function initNav(){const b=$('#menuBtn'),n=$('#navLinks');b.addEventListener('click',()=>n.classList.toggle('open'));$$('#navLinks a').forEach(a=>a.addEventListener('click',()=>n.classList.remove('open')));$$('[data-scroll]').forEach(el=>el.addEventListener('click',()=>$(el.dataset.scroll)?.scrollIntoView({behavior:'smooth'})))}
+function initPlayerCard(){const ids=['pcName','pcOvr','pcPos','pcClub','pcNation','pcLeague','pcStyle','pcPac','pcSho','pcPas','pcDri','pcDef','pcPhy'];ids.forEach(id=>$('#'+id).addEventListener('input',updateCard));$('#pcPhoto').addEventListener('change',updatePhoto);$('#pcGenerate').addEventListener('click',updateCard);$('#pcDownload').addEventListener('click',downloadCard);updateCard()}
+function updatePhoto(e){const file=e.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const wrap=$('#pvPhoto');wrap.innerHTML='<img alt="Player photo">';wrap.querySelector('img').src=reader.result;wrap.dataset.src=reader.result};reader.readAsDataURL(file)}
+function updateCard(){const map={pcName:'pvName',pcOvr:'pvOvr',pcPos:'pvPos',pcPac:'pvPac',pcSho:'pvSho',pcPas:'pvPas',pcDri:'pvDri',pcDef:'pvDef',pcPhy:'pvPhy'};for(const [a,b] of Object.entries(map))$('#'+b).textContent=$('#'+a).value||'';$('#pvMeta').textContent=`${$('#pcClub').value||'Club'} • ${$('#pcNation').value||'NAT'} • ${$('#pcLeague').value||'League'}`;const style=$('#pcStyle').value;const card=$('#playerCardPreview');card.style.background=style==='dark'?'radial-gradient(circle at 50% 15%,#3b321a 0,#17130b 32%,#090909 100%)':style==='light'?'linear-gradient(150deg,#f4e7b0,#8c6d22 42%,#1a160b 100%)':'radial-gradient(circle at 50% 15%,#5f4b16 0,#2a210d 25%,#13110b 58%,#090909 100%)';card.style.color=style==='light'?'#111':'#fff'}
+function downloadCard(){const card=$('#playerCardPreview');const canvas=document.createElement('canvas');canvas.width=900;canvas.height=1260;const ctx=canvas.getContext('2d');ctx.fillStyle='#111';ctx.fillRect(0,0,900,1260);ctx.strokeStyle='#d4af37';ctx.lineWidth=12;ctx.strokeRect(12,12,876,1236);ctx.fillStyle='#fff';ctx.font='900 120px Arial';ctx.fillText($('#pcOvr').value,70,150);ctx.font='900 48px Arial';ctx.fillText($('#pcPos').value,76,205);ctx.textAlign='center';ctx.font='900 64px Arial';ctx.fillText($('#pcName').value,450,1120);ctx.font='28px Arial';ctx.fillText($('#pcClub').value+' • '+$('#pcNation').value,450,1165);ctx.textAlign='left';const stats=[['PAC',$('#pcPac').value],['SHO',$('#pcSho').value],['PAS',$('#pcPas').value],['DRI',$('#pcDri').value],['DEF',$('#pcDef').value],['PHY',$('#pcPhy').value]];stats.forEach((s,i)=>{const x=170+(i%3)*220,y=990+Math.floor(i/3)*65;ctx.font='900 34px Arial';ctx.fillStyle='#d4af37';ctx.fillText(s[1],x,y);ctx.font='22px Arial';ctx.fillStyle='#fff';ctx.fillText(s[0],x+55,y)});const a=document.createElement('a');a.download='fc-mobile-elite-card.png';a.href=canvas.toDataURL('image/png');a.click();showToast('Card downloaded');}
+const formationMap={
+'4-3-3':[['GK',50,90],['LB',15,70],['CB',38,70],['CB',62,70],['RB',85,70],['CM',28,50],['CM',50,48],['CM',72,50],['LW',18,22],['ST',50,16],['RW',82,22]],
+'4-2-3-1':[['GK',50,90],['LB',15,70],['CB',38,70],['CB',62,70],['RB',85,70],['CDM',35,55],['CDM',65,55],['LW',18,34],['CAM',50,32],['RW',82,34],['ST',50,14]],
+'4-1-2-1-2':[['GK',50,90],['LB',15,70],['CB',38,70],['CB',62,70],['RB',85,70],['CDM',50,58],['CM',30,42],['CM',70,42],['CAM',50,30],['ST',38,12],['ST',62,12]],
+'4-4-2':[['GK',50,90],['LB',15,70],['CB',38,70],['CB',62,70],['RB',85,70],['LM',18,46],['CM',38,42],['CM',62,42],['RM',82,46],['ST',38,16],['ST',62,16]],
+'3-4-3':[['GK',50,90],['CB',28,66],['CB',50,68],['CB',72,66],['LM',15,44],['CM',38,43],['CM',62,43],['RM',85,44],['LW',20,18],['ST',50,14],['RW',80,18]]};
+function renderPitch(saved){const data=saved||{};const f=$('#formation').value;$('#pitchSlots').innerHTML='';formationMap[f].forEach((s,i)=>{const d=document.createElement('div');d.className='player-slot';d.style.left=s[1]+'%';d.style.top=s[2]+'%';d.innerHTML=`<div class="slot-dot">${s[0]}</div><div class="slot-label">Player ${i+1}</div><div class="slot-ovr" id="ovr-${i}">${data[i]?.ovr||0} OVR</div><input class="slot-input squad-ovr" data-i="${i}" type="number" min="1" max="200" value="${data[i]?.ovr||''}" placeholder="OVR">`;$('#pitchSlots').appendChild(d)});$$('.squad-ovr').forEach(x=>x.addEventListener('input',calcSquad));calcSquad()}
+function calcSquad(){const vals=$$('.squad-ovr').map(x=>Number(x.value)).filter(Boolean);const avg=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0;$('#squadOvr').textContent=avg;$$('.squad-ovr').forEach(x=>$('#ovr-'+x.dataset.i).textContent=(Number(x.value)||0)+' OVR')}
+function squadData(){const out={};$$('.squad-ovr').forEach(x=>out[x.dataset.i]={ovr:Number(x.value)||0});return {formation:$('#formation').value,name:$('#squadName').value,players:out}}
+function initSquad(){renderPitch();$('#formation').addEventListener('change',()=>renderPitch());$('#saveSquad').addEventListener('click',()=>{write('fme_squad',squadData());showToast('Squad saved in this browser')});$('#loadSquad').addEventListener('click',()=>{const s=read('fme_squad',null);if(!s){showToast('No saved squad');return}$('#formation').value=s.formation||'4-3-3';$('#squadName').value=s.name||'My Elite Squad';renderPitch(s.players);showToast('Squad loaded')});$('#clearSquad').addEventListener('click',()=>{renderPitch();showToast('Squad cleared')})}
+function initRating(){$('#calculateRating').addEventListener('click',()=>{const a=Number($('#rateAtk').value),m=Number($('#rateMid').value),d=Number($('#rateDef').value),g=Number($('#rateGk').value);const total=Math.round((a+m+d+g)/4);const weakest=Object.entries({Attack:a,Midfield:m,Defense:d,GK:g}).sort((x,y)=>x[1]-y[1]).slice(0,2).map(x=>x[0]);$('#ratingResult').innerHTML=`<div class="notice"><strong>Overall Rating: ${total}/100</strong><br><span class="muted">Focus on: ${weakest.join(' and ')}.</span></div>`})}
+function renderPlayers(){const q=$('#searchInput').value.trim().toLowerCase(),pos=$('#searchPos').value;const arr=players.filter(p=>(!q||p.name.toLowerCase().includes(q)||p.club.toLowerCase().includes(q))&&(!pos||p.pos===pos));$('#playerResults').innerHTML=arr.map(p=>`<div class="card"><span class="tag">${p.pos}</span><h3 style="margin-top:10px">${p.name}</h3><p>${p.club} • ${p.nation}</p><div class="badge">OVR ${p.ovr}</div></div>`).join('')||'<div class="notice">No players found.</div>'}
+function initSearch(){$('#searchInput').addEventListener('input',renderPlayers);$('#searchPos').addEventListener('change',renderPlayers);renderPlayers()}
+let guess={player:null,score:0,streak:0};function newGuess(){guess.player=players[Math.floor(Math.random()*players.length)];$('#guessClues').textContent=`Position: ${guess.player.pos} • OVR: ${guess.player.ovr} • Nation: ${guess.player.nation} • Club: ${guess.player.club}`;$('#guessInput').value='';$('#guessStatus').textContent='';}function initGuess(){$('#guessSubmit').addEventListener('click',()=>{const v=$('#guessInput').value.trim().toLowerCase();if(!v)return;if(v===guess.player.name.toLowerCase()){guess.streak++;guess.score+=100+Math.max(0,(guess.streak-1)*25);$('#guessStatus').textContent='✅ Correct!';}else{guess.streak=0;$('#guessStatus').textContent=`❌ Not quite. The answer was ${guess.player.name}.`;}$('#guessScore').textContent=guess.score;$('#guessStreak').textContent=guess.streak;newGuess()});$('#guessNew').addEventListener('click',newGuess);newGuess()}
+function renderLeaderboard(){const entries=Object.entries(app.points).sort((a,b)=>b[1]-a[1]);$('#leaderboardList').innerHTML=entries.slice(0,10).map((e,i)=>`<div class="list-row"><span><span class="rank">#${i+1}</span> ${e[0]}</span><span class="badge">${e[1]} pts</span></div>`).join('')||'<div class="muted">No points yet.</div>'}
+function renderHall(){$('#hallList').innerHTML=app.hall.map(h=>`<div class="list-row"><span>🏆 ${h.name}</span><span class="badge">${h.title}</span></div>`).join('')}
+function renderEvents(){$('#tournamentCards').innerHTML=app.events.map(e=>`<div class="card"><span class="tag">${e.status}</span><h3 style="margin-top:10px">${e.name}</h3><p>${e.prize}</p><button class="btn" onclick="window.open('https://discord.gg/8d8WJWdzrR','_blank')">📣 Open Community</button></div>`).join('')}
+function renderStandings(){$('#standingsBody').innerHTML=Object.entries(app.points).sort((a,b)=>b[1]-a[1]).slice(0,8).map((e,i)=>`<tr><td>#${i+1}</td><td>${e[0]}</td><td>${e[1]}</td><td>+${Math.max(0,Math.round(e[1]/20))}</td><td>${Math.round(e[1]/10)}</td></tr>`).join('')}
+function renderBracket(){$('#bracket').innerHTML=['QF 1: Player A vs Player B','QF 2: Player C vs Player D','SF: Winner QF1 vs Winner QF2','FINAL: TBD'].map(x=>`<div class="list-row"><span>${x}</span><span class="badge">2 LEG</span></div>`).join('')}
+function renderAdminLogs(){const logs=app.announcements.slice(-8).reverse();$('#adminLogs').innerHTML=logs.map(l=>`<div class="list-row"><span>${l.text}</span><span class="small muted">${new Date(l.at).toLocaleString()}</span></div>`).join('')||'<div class="muted">No announcements yet.</div>'}
+function initProfile(){const saved=read('fme_profile',null);if(saved){$('#profileName').value=saved.name||'';$('#profileUid').value=saved.uid||'';$('#profileFormation').value=saved.formation||'';$('#profileClub').value=saved.club||'';showProfile(saved)}$('#saveProfile').addEventListener('click',()=>{const p={name:$('#profileName').value.trim(),uid:$('#profileUid').value.trim(),formation:$('#profileFormation').value.trim(),club:$('#profileClub').value.trim()};if(!p.name){showToast('Enter a username');return}write('fme_profile',p);if(!(p.name in app.points))app.points[p.name]=0;sync();showProfile(p);showToast('Profile saved')})}
+function showProfile(p){$('#profileView').innerHTML=`<strong>${p.name}</strong><br><span class="muted">UID: ${p.uid||'—'} • Formation: ${p.formation||'—'} • Club: ${p.club||'—'} • Points: ${app.points[p.name]??0}</span>`}
+function requireAdmin(fn){return(...args)=>{if($('#adminPanel').classList.contains('hidden')){showToast('Enter admin mode first');return}fn(...args)}}
+function initAdmin(){ $('#adminLoginBtn').addEventListener('click',()=>{if($('#adminPin').value===CONFIG.ADMIN_PIN){$('#adminLogin').classList.add('hidden');$('#adminPanel').classList.remove('hidden');showToast('Admin mode active')}else showToast('Wrong PIN')}); $('#adminLogout').addEventListener('click',()=>{$('#adminPanel').classList.add('hidden');$('#adminLogin').classList.remove('hidden')}); $('#adminAddPoints').addEventListener('click',requireAdmin(()=>{const n=$('#adminUser').value.trim(),p=Number($('#adminPoints').value);if(!n||!p)return;app.points[n]=(app.points[n]||0)+p;sync();showToast('Points added') })); $('#adminCreateEvent').addEventListener('click',requireAdmin(()=>{const n=$('#adminEventName').value.trim(),p=$('#adminEventPrize').value.trim()||'Community Reward';if(!n)return;app.events.push({name:n,prize:p,status:'Upcoming'});sync();showToast('Event created')})); $('#adminPublish').addEventListener('click',requireAdmin(()=>{const text=$('#adminAnnouncement').value.trim();if(!text)return;app.announcements.push({text,at:Date.now()});sync();showToast('Announcement published')})); $('#exportData').addEventListener('click',requireAdmin(()=>{const blob=new Blob([JSON.stringify(app,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='fme-hub-backup.json';a.click();showToast('Backup exported')})); $('#importData').addEventListener('change',requireAdmin((e)=>{const f=e.target.files?.[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{app=JSON.parse(r.result);sync();renderStandings();showToast('Backup imported')}catch{showToast('Invalid backup file')}};r.readAsText(f)})); $('#resetData').addEventListener('click',requireAdmin(()=>{if(!confirm('Reset FCME local prototype data?'))return;localStorage.removeItem('fme_hub');app={profiles:[],events:[],points:{},announcements:[],hall:[]};sync();renderStandings();showToast('Local data reset')}));}
+function initChallenges(){$('#dailyComplete').addEventListener('click',()=>{showToast('Daily challenge marked locally');if($('#profileName').value){const n=$('#profileName').value.trim();app.points[n]=(app.points[n]||0)+25;sync();showToast('+25 FCME points')}});$('#goalSubmit').addEventListener('click',()=>showToast('Submission flow is ready for backend integration'))}
+function init(){initNav();initPlayerCard();initSquad();initRating();initSearch();initGuess();initProfile();renderEvents();renderStandings();renderBracket();initAdmin();initChallenges();sync();}
+document.addEventListener('DOMContentLoaded',init);
+})();
+</script>
 </body>
 </html>
